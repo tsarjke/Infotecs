@@ -16,7 +16,3 @@ const getValue = (dataItem, requiredData) => {
 
 // Поиск необходимой информации в данных
 export const getData = (fullDataArray, requiredData) => fullDataArray.map((item) => getValue(item, requiredData));
-
-// const result = getData(data, ['firstName', 'lastName', 'about', 'eyeColor']);
-
-// console.log(result);

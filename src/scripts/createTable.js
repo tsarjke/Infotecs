@@ -17,8 +17,8 @@ const createRow = (dataItem, header = false, sortParam, sortDir) => {
 
 	Object[objMethod](dataItem).forEach((value) => {
 		const tableCell = document.createElement(cellTag);
-		const div = document.createElement('div');
-		div.textContent = value;
+		const divForContent = document.createElement('div');
+		divForContent.textContent = value;
 		if (value === sortParam) {
 			if (sortDir === 'asc') {
 				tableCell.dataset.sort = 'asc';
@@ -26,7 +26,13 @@ const createRow = (dataItem, header = false, sortParam, sortDir) => {
 				tableCell.dataset.sort = 'desc';
 			}
 		}
-		tableCell.append(div);
+		if (header === 'header') {
+			const hiddenSpan = document.createElement('span');
+			hiddenSpan.classList.add('hiding');
+			tableCell.append(divForContent, hiddenSpan);
+		} else {
+			tableCell.append(divForContent);
+		}
 		tableCellsList.push(tableCell);
 	});
 
