@@ -136,7 +136,7 @@ body {
 }
 
 .main-table th[data-sort='asc']:before {
-  background: url("git ../img/arrow-down.svg") left/15px no-repeat;
+  background: url("../img/arrow-down.svg") left/15px no-repeat;
 }
 
 .main-table th[data-sort='desc']:before {
