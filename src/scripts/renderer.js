@@ -44,7 +44,7 @@ const render = (pageNum, notesOnPage, sortParam = 0, sortDir) => {
 	table.addEventListener('click', (e) => editField(e, table));
 
 
-	const hideHeaderCell = (e) => {
+	const hideCol = (e) => {
 		if (e.target.classList.contains('hiding')) {
 			[...e.target.closest('table').children].forEach((tr) => {
 				tr.children[e.target.closest('th').cellIndex].classList.toggle('hidden');
@@ -53,7 +53,7 @@ const render = (pageNum, notesOnPage, sortParam = 0, sortDir) => {
 		}
 	};
 
-	table.addEventListener('click', (e) => hideHeaderCell(e, table));
+	table.addEventListener('click', (e) => hideCol(e, table));
 
 	wrapperElem.innerHTML = '';
 	wrapperElem.append(table, pagintaion);

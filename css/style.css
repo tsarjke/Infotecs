@@ -136,11 +136,11 @@ body {
 }
 
 .main-table th[data-sort='asc']:before {
-  background: url("../../img/arrow-down.svg") left/15px no-repeat;
+  background: url("git ../img/arrow-down.svg") left/15px no-repeat;
 }
 
 .main-table th[data-sort='desc']:before {
-  background: url("../../img/arrow-up.svg") left/15px no-repeat;
+  background: url("../img/arrow-up.svg") left/15px no-repeat;
 }
 
 .main-table th .hiding {
@@ -152,12 +152,12 @@ body {
           transform: translate(0, -50%);
   width: 30px;
   height: 30px;
-  background: url("../../img/not-visible.svg") center/20px no-repeat;
+  background: url("../img/not-visible.svg") center/20px no-repeat;
   cursor: default;
 }
 
 .main-table th .hiding-active {
-  background-image: url("../../img/visible.svg");
+  background-image: url("../img/visible.svg");
 }
 
 .main-table td {
