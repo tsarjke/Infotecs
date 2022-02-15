@@ -1,3 +1,8 @@
+/* 
+Создание списка с номерами страниц. Аргументы - количество записей на странице, данные и активная страница (для доп. класса)
+Возвращает список ul с номерами страниц от 1 до countOfPages
+*/
+
 export const createPagination = (notesOnPage, dataArray, activePage) => {
 	const countOfPages = Math.ceil(dataArray.length  / notesOnPage) + 1;
 

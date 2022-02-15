@@ -1,3 +1,12 @@
+/*
+Поле для редактирования данных. Аргументы - таргет клика и таблица сама
+Справа от таблицы по высоте ячейки с кликом появляется поле с данными из ячейки, по которой был осуществлен клика
+Есть возможность изменить данные и записать в таблицу или закрыть окно
+После изменения окно закрывается (display: none)
+Меняет как данные по цвету, так и сам цвет, но при ошибочном вводе цвете данные примет, но покажет крестик в таблице
+* Изменения при перерисовке исчезают
+*/
+
 export const editField = ({ target }, table) => {
 	const tableCell = target.nodeName === 'TD' ? target : target.parentNode;
 	const editFieldElem = document.querySelector('.edit-field');
@@ -21,11 +30,12 @@ export const editField = ({ target }, table) => {
 
 		editBtn.addEventListener('click', onEditBtnClick);
 
-		const onCanceBtnClick = () => {
+		const onCancelBtnClick = () => {
 			editFieldElem.style.display = 'none';
 			editBtn.removeEventListener('click', onEditBtnClick);
 		};
-		cancelBtn.addEventListener('click', onCanceBtnClick);
+
+		cancelBtn.addEventListener('click', onCancelBtnClick);
 		textareaElem.value = tableCell.firstChild.textContent;
 		textareaElem.focus();
 		const tableRightBorder = table.getBoundingClientRect().right;

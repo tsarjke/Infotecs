@@ -1,4 +1,10 @@
-// Функция для создания таблицы по селектору блока, количеству записей на странице и массиву данных
+/*
+Создание ряда для таблицы и заполнение необходиымыми данными. Аргументы - данные, хедер ('header'/false), 
+параметр сортировки (название столбца) и направление (asc или desc)
+Если header, то дополнительные данные для сортировки
+Данные внутри ячейки в div'ах для удобства стилизации
+Возвращает ряд заполненный данными ряд tr для таблицы
+*/
 
 const createRow = (dataItem, header = false, sortParam, sortDir) => {
 	const tableRow = document.createElement('tr');
@@ -40,8 +46,9 @@ const createRow = (dataItem, header = false, sortParam, sortDir) => {
 	return tableRow;
 };
 
+// Создание таблицы по данным, параметру сортировки (название столбца) и направлению сортировки (asc или desc)
+// Возвращает таблицу с данными (сортированными, если задан sortParam) и заголовком
 export const createTable = (dataArray, sortParam, sortDir) => {
-	// const countOfPages = Math.ceil((dataArray.length - 1) / notesOnPage) + 1;
 	const table = document.createElement('table');
 	table.classList.add('main-table');
 	const tableHeaderRow = createRow(dataArray[0], 'header', sortParam, sortDir);
